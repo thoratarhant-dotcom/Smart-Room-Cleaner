@@ -1,2 +1,7 @@
-[InternetShortcut]
-URL=https://github.com/mj25csb0b48-dot/Smart-Room-Cleaner/blob/main/proposedsystem-moisture_code.ino
+#define MOISTURE_PIN A0
+#define MOISTURE_THRESHOLD 500
+
+bool readMoistureSensor() {
+  int raw = analogRead(MOISTURE_PIN);
+  return (raw >= MOISTURE_THRESHOLD);
+}
