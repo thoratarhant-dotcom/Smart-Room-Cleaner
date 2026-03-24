@@ -1,2 +1,11 @@
-[InternetShortcut]
-URL=https://github.com/mj25csb0b48-dot/Smart-Room-Cleaner/blob/main/proposedsystem-ir_code.ino
+#define IR_PIN 2
+#define VACUUM_RELAY A1
+
+bool readIRSensor() {
+  int raw = digitalRead(IR_PIN);
+  return (raw == LOW);
+}
+
+void controlVacuum(bool activate) {
+  digitalWrite(VACUUM_RELAY, activate ? HIGH : LOW);
+}
